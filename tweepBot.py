@@ -18,11 +18,11 @@ api = tweepy.API(auth, wait_on_rate_limit=True,
 #api.update_status("tweeting with python")
 
 #user
-user = api.get_user("mr_jnc")
+user = api.get_user("Chica15347127")
 name = user.name
 description = user.description
 location = user.location
-
+print(f"{name}, is from {location}. They are {description}")
 
 #start following a user
 #api.create_friendship("mr_jnc")
@@ -31,3 +31,6 @@ location = user.location
 tl = api.home_timeline()
 #for tweet in tl:
 #    print(f"{tweet.user.name} said {tweet.text}")
+
+#update user profile
+#api.update_profile(description="changes made from python")
