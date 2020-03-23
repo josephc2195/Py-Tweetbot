@@ -13,11 +13,21 @@ auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth, wait_on_rate_limit=True,
     wait_on_rate_limit_notify=True)
 
+
 #send a tweet:
-#api.update_status("")
+#api.update_status("tweeting with python")
 
 #user
 user = api.get_user("mr_jnc")
+name = user.name
+description = user.description
+location = user.location
 
-#follows
-api.create_friendship("realpython")
+
+#start following a user
+#api.create_friendship("mr_jnc")
+
+#shows timelines of selected user
+tl = api.home_timeline()
+#for tweet in tl:
+#    print(f"{tweet.user.name} said {tweet.text}")
