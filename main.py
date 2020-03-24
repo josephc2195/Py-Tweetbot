@@ -10,4 +10,8 @@ credentials = {
 
 bot = TwitterBot(credentials)
 
-if sys.argv
+if sys.argv[1] == "tweet":
+    bot.tweet(sys.argv[2])
+
+if sys.argv[1] == "friend":
+    bot.friend(sys.argv[2])
