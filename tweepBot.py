@@ -1,19 +1,5 @@
 import tweepy
 
-class TwitterBot:
-
-    def __init__(self, credentials):
-        self.auth = tweepy.OAuthHandler(credentials["CONSUMER_KEY"], credentials["CONSUMER_SECRET"])
-        self.auth.set_access_token(credentials["ACCESS_TOKEN"], credentials["ACCESS_TOKEN_SECRET"])
-        self.api = tweepy.API(self.auth, wait_on_rate_limit=True)
-
-    def tweet(self, tweet):
-        self.api.update_status(tweet)
-
-    def friend(self, user):
-        self.api.create_friendship(user)
-
-'''
 #personal keys
 CONSUMER_KEY = "EDuAwY6n75xAMqN1de4m3ba6o"
 CONSUMER_SECRET = "TPhQviO91fank70pdFx0QLhpwWhK8fCrdC0zOIgV1PGhG11gHF"
@@ -30,7 +16,7 @@ api = tweepy.API(auth, wait_on_rate_limit=True,
 
 #send a tweet:
 #api.update_status("Milo is the guy")
-
+'''
 #user
 user = api.get_user("mr_jnc")
 name = user.name
@@ -52,4 +38,21 @@ print("trends: ")
 trends_result = api.trends_place(1)
 for trend in trends_result[0]["trends"]:
     print(trend["name"])
+
+
+#get followers of user
+followers = []
+id = []
+print("Last 20 Followers:")
+for follower in user.followers():
+    followers.append(follower.name)
+    id.append(follower.id_str)
+print(followers)
+print(id)
+
+
+#search for specific tweets
+for tweet in api.search(q="covid-19", lang="en", rpp=10):
+    print(f"{tweet.user.name}:{tweet.text}")
+    print("")
 '''

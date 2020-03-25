@@ -1,5 +1,5 @@
 import sys
-from tweepBot import TwitterBot
+from twitterBot import TwitterBot
 
 credentials = {
     "CONSUMER_KEY": "EDuAwY6n75xAMqN1de4m3ba6o",
