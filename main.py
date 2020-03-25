@@ -15,3 +15,6 @@ if sys.argv[1] == "tweet":
 
 if sys.argv[1] == "friend":
     bot.friend(sys.argv[2])
+
+if sys.argv[1] == "search":
+    bot.search(sys.argv[2])

@@ -12,3 +12,9 @@ class TwitterBot:
 
     def friend(self, user):
         self.api.create_friendship(user)
+
+    def search(self, keywords):
+        self.api.search(q=keywords, lang="en", rpp=10)
+        for tweet in self.api.search(q=keywords, lang="en", rpp=10):
+            print(f"{tweet.user.name}:{tweet.text}")
+            print("")
