@@ -18,3 +18,6 @@ if sys.argv[1] == "friend":
 
 if sys.argv[1] == "search":
     bot.search(sys.argv[2])
+
+if sys.argv[1] == "follow":
+    bot.follow()
