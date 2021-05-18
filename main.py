@@ -2,10 +2,10 @@ import sys
 from twitterBot import TwitterBot
 
 credentials = {
-    "CONSUMER_KEY": "EDuAwY6n75xAMqN1de4m3ba6o",
-    "CONSUMER_SECRET": "TPhQviO91fank70pdFx0QLhpwWhK8fCrdC0zOIgV1PGhG11gHF",
-    "ACCESS_TOKEN": "1241156834959994884-dXg2FkueZOfwZMurobWi0lNYEYcaR5",
-    "ACCESS_TOKEN_SECRET": "KHXdQtvffkZy7EQISubP1570NFBrS5qC6vQKpVnkctvVO"
+    "CONSUMER_KEY": "ExHzjjl1dSjff4rNMDMEaVSRk",
+    "CONSUMER_SECRET": "CqzcyIJXfkoZtfol8qXgcLCDQ7BKjqCCAKX7iWiA3FFwTMfzpi",
+    "ACCESS_TOKEN": "1241156834959994884-YH7zjfDITY95N5a0Q5FE2a40Ylf6lO",
+    "ACCESS_TOKEN_SECRET": "vy4NjMY4KTwyJxtlyuYwFttRFdqv2DbxPd28fPhNsVa3D"
 }
 
 bot = TwitterBot(credentials)
@@ -21,3 +21,12 @@ if sys.argv[1] == "search":
 
 if sys.argv[1] == "follow":
     bot.follow()
+
+if sys.argv[1] == "dm":
+    bot.dm(sys.argv[2], sys.argv[3])
+
+if sys.argv[1] == "trends":
+    if len(sys.argv) < 3: 
+        bot.global_trends()
+    else:
+        bot.trends(sys.argv[2])
