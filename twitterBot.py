@@ -9,6 +9,7 @@ class TwitterBot:
 
     def tweet(self, tweet):
         self.api.update_status(tweet)
+        print(f"New Tweet from user: {tweet}")
 
     def friend(self, user):
         self.api.create_friendship(user)
