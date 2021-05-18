@@ -43,8 +43,7 @@ class TwitterBot:
         f = open("world_trends.txt", "a", encoding="utf-8") 
         f.write(toTxt)
         f.close()
-        f = open("world_trends.txt", "r")
-        print(f.read())
+        print("Trends added to world_trends.txt")
 
     def trends(self, place):
         print(f"Top 10 trending topics in {place}: ")
@@ -80,8 +79,8 @@ class TwitterBot:
         f = open(f"{place}_trends.txt", "a", encoding="utf-8") 
         f.write(toTxt)
         f.close()
-        f = open(f"{place}_trends.txt", "r")
-        print(f.read())
+        print(f"Trends aded to {place}_trends.txt")
+
         
             
             
