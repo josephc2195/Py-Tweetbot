@@ -43,34 +43,45 @@ class TwitterBot:
         f = open("world_trends.txt", "a", encoding="utf-8") 
         f.write(toTxt)
         f.close()
-
         f = open("world_trends.txt", "r")
         print(f.read())
 
     def trends(self, place):
         print(f"Top 10 trending topics in {place}: ")
+        toTxt = f"Trending topics in {place} on {datetime.now()} \n"
         if place == "New York" or place == "NY":
             for t in self.api.trends_place(2459115)[0]["trends"][:10]:
                 print(t["name"])
+                toTxt += t["name"] + "\n"
         elif place == "Los Angeles" or place == "LA":
             for t in self.api.trends_place(2442047)[0]["trends"][:10]:
                 print(t["name"])
+                toTxt += t["name"] + "\n"
         elif place == "San Diego" or place == "SD":
             for t in self.api.trends_place(2487889)[0]["trends"][:10]:
                 print(t["name"]) 
+                toTxt += t["name"] + "\n"
         elif place == "London":
             for t in self.api.trends_place(44418)[0]["trends"][:10]:
                 print(t["name"])
+                toTxt += t["name"] + "\n"
         elif place == "Chicago":
             for t in self.api.trends_place(2379574)[0]["trends"][:10]:
                 print(t["name"])
+                toTxt += t["name"] + "\n"
         elif place == "USA" or place == "US":
             for t in self.api.trends_place(23424977)[0]["trends"][:10]:
                 print(t["name"])
+                toTxt += t["name"] + "\n"
         elif place == "Japan":
             for t in self.api.trends_place(23424856)[0]["trends"][:10]:
                 print(t["name"])
-        
+                toTxt += t["name"] + "\n"
+        f = open(f"{place}_trends.txt", "a", encoding="utf-8") 
+        f.write(toTxt)
+        f.close()
+        f = open(f"{place}_trends.txt", "r")
+        print(f.read())
         
             
             
